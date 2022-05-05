@@ -121,14 +121,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button id="nieuwefilm" type="submit" class="btn btn-primary">Create</button>
                         </form>
+                        <div id="feedback1"></div>
                     </div>
                     <!-- BESTAAND -->
                     <div class="tab-pane fade" id="pills-bestaand" role="tabpanel" aria-labelledby="pills-bestaand-tab">
                         <div class="row">
                             <div class="col-md-12 col-lg-2 order-md-0 order-lg-1">
-                                    <img width="100%" height="auto"
+                                    <img width="100%" height="auto" id="poster-bestaand"
                                          src="https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"/>
                             </div>
                             <div class="col-md-12 col-lg-10 order-md-1 order-lg-0">
@@ -136,31 +137,31 @@
                                     <div class="col-lg-6 mb-3 form-group">
                                         <label for="bestaand-title" class="form-label">Movie Title</label>
                                         <input type="text" class="form-control" id="bestaand-title"
-                                               placeholder="Movie Title"/>
+                                               placeholder="Movie Title" disabled/>
                                     </div>
                                     <div class="col-lg-6 mb-3 form-group">
                                         <label for="bestaand-runtime" class="form-label">Runtime</label>
                                         <input type="number" step="10" min="0" class="form-control" id="bestaand-runtime"
-                                               placeholder="150"/>
+                                               placeholder="150" disabled/>
                                     </div>
                                     <div class="col-lg-6 mb-3 form-group">
                                         <label for="bestaand-releasedate" class="form-label">Release Date</label>
-                                        <input type="date" class="form-control" id="bestaand-releasedate"/>
+                                        <input type="date" class="form-control" id="bestaand-releasedate" disabled/>
                                     </div>
                                     <div class="col-lg-6 mb-3 form-group">
                                         <label for="bestaand-type" class="form-label">Type</label>
-                                        <select type="date" class="form-control" id="bestaand-type">
+                                        <select type="date" class="form-control" id="bestaand-type" disabled>
                                             <option>MOVIE</option>
                                             <option>SERIE</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="bestaand-plot" class="form-label">Plot</label>
-                                        <textarea class="form-control" id="bestaand-plot" rows="3"></textarea>
+                                        <textarea class="form-control" id="bestaand-plot" rows="3" disabled></textarea>
                                     </div>
                                     <div class="col-lg-2 mb-3 form-group">
                                         <input class="form-check-input" type="checkbox" value="" id="bestaand-commingsoon"
-                                               checked>
+                                               checked disabled>
                                         <label class="form-check-label" for="bestaand-commingsoon">
                                             Coming Soon
                                         </label>
@@ -173,7 +174,6 @@
             </div>
             <div class="tab-pane fade" id="nav-search" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <section class="onzichtbaar zoek">
-                    <h1>Zoek</h1>
 
                     <div class="input-group">
                         <input class="form-control" type="search" id="searchField" placeholder="Zoek op titel of type">
@@ -195,6 +195,9 @@
 
                         </tbody>
                     </table>
+
+                    <div id="feedback3"></div>
+
             </section>
             </div>
             <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="pills-contact-tab">About</div>
