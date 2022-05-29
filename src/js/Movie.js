@@ -1,8 +1,8 @@
 export class Movie {
     constructor(
-        movieId, comingSoon, title, released, runtime, type, plot, poster
+        comingSoon, title, released, runtime, type, plot, poster,id
     ) {
-        this.movieId = movieId
+        this.id = id
         this.comingSoon = comingSoon
         this.title = title
         this.released = released;

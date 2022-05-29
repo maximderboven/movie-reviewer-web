@@ -1,0 +1,48 @@
+@use 'variables' as *;
+@use "mixins" as *;
+
+footer {
+  background-color: $primarycolor;
+}
+.onhoverrow:hover{
+  background: #f2f3ff;
+  outline: none;
+  cursor: pointer;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: $primarycolor!important;
+}
+
+
+@media screen and (max-width: 770px) {
+  footer {
+    @include changecolor(blue)
+  }
+  #logo {
+    @include invisible()
+  }
+}
+
+footer{
+  a {
+    color:rgba($light, 1) !important
+  }
+  p {
+    color:rgba($dark, 1) !important
+  }
+}

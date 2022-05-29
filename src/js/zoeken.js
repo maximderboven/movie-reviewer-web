@@ -1,6 +1,9 @@
 import * as restClient from './restClient.js';
 import { Movie } from './Movie.js';
-import { details } from './detail.js';
+
+export default function initZoeken () {
+    init();
+}
 
 var arrayMovies=[];
 export function init(){
@@ -21,29 +24,23 @@ function tableElements(){
     restClient
         .getMovies()
         .then(function (responseData) {
-
-            console.log(responseData)
-
+            arrayMovies.length =0;
             for (let i = 0; i < responseData.length; i++) {
                 var Movies = Object.assign(new Movie,responseData[i]);
                 arrayMovies.push(Movies);
-
                 createtable(arrayMovies);
-
             }
-
         })
         .catch(function (e) {
-            document.querySelector('#feedback3').innerHTML = 'Error bij GET:' + e;
+            document.querySelector('#errorlog').innerHTML = 'ERROR' + e;
         });
 }
-
 function createtable(data){
     var tbody = document.querySelector("#tbody");
-
     tbody.innerHTML = '';
     for (let i = 0; i < data.length; i++) {
-        var row = `<tr> <th id="item${i}">
+        var row = `<tr onclick="
+document.getElementById('nav-detail-tab').click();document.getElementById('movie-option').value = ${data[i].id};document.getElementById('movie-option').dispatchEvent(new Event('change'))" class="onhoverrow" id="row-${i}"> <th id="item${i}">
                              ${data[i].id}
                              </th><td id="item${i}">
                              ${data[i].title}
@@ -57,9 +54,7 @@ function createtable(data){
                              ${data[i].comingSoon}
                              </td></tr>`;
         tbody.innerHTML += row;
-
     }
-
 }
 function searchTable(value,data){
     var filterData = [];
@@ -68,26 +63,19 @@ function searchTable(value,data){
     for(let i = 0;i<data.length;i++){
         value = value.toUpperCase();
         var name = data[i].title.toUpperCase();
-        var postcode = data[i].runtime.toString();
-
-
+        var runtime = data[i].runtime.toString();
         if(name.includes(value)){
             filterData.push(data[i]);
 
         }
-        if(postcode.includes(value)){
+        if(runtime.includes(value)){
             numberData.push(data[i]);
-
         }
-
     }
     if(value.match(/[0-9]+/)){
-        console.log("number");
         return numberData;
     }
     else{
-        console.log("string")
         return filterData;
     }
 }
-init();

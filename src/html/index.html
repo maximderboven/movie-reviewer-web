@@ -7,7 +7,7 @@
     <meta name="author" content="Maxim Derboven">
     <title>Movies Project UI</title>
 
-    <!-- Favicons -->
+    <!-- Favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon/favicon-16x16.png">
@@ -21,7 +21,7 @@
 <div class="container py-3">
     <header>
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none" id="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 20 20" role="img">
                     <path
                             d="M18.175,4.142H1.951C1.703,4.142,1.5,4.344,1.5,4.592v10.816c0,0.247,0.203,0.45,0.451,0.45h16.224c0.247,0,0.45-0.203,0.45-0.45V4.592C18.625,4.344,18.422,4.142,18.175,4.142 M4.655,14.957H2.401v-1.803h2.253V14.957zM4.655,12.254H2.401v-1.803h2.253V12.254z M4.655,9.549H2.401V7.747h2.253V9.549z M4.655,6.846H2.401V5.043h2.253V6.846zM14.569,14.957H5.556V5.043h9.013V14.957z M17.724,14.957h-2.253v-1.803h2.253V14.957z M17.724,12.254h-2.253v-1.803h2.253V12.254zM17.724,9.549h-2.253V7.747h2.253V9.549z M17.724,6.846h-2.253V5.043h2.253V6.846z"
@@ -43,175 +43,31 @@
                        data-bs-toggle="tab"
                        data-bs-target="#nav-search" type="button" role="tab" aria-controls="nav-search"
                        aria-selected="true">Search</a>
-                    <a class="py-2 text-dark text-decoration-none nav-link" id="nav-about-tab" data-bs-toggle="tab"
-                       data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about"
-                       aria-selected="true">About</a>
+                    <a class="py-2 text-dark text-decoration-none nav-link" id="nav-new-tab" data-bs-toggle="tab"
+                       data-bs-target="#nav-new" type="button" role="tab" aria-controls="nav-new"
+                       aria-selected="true">New Movie</a>
                 </div>
             </nav>
         </div>
     </header>
-
+    <!-- in de index.html file -->
     <main>
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                Home
-            </div>
-            <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-nieuw-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-nieuw" type="button" role="tab" aria-controls="pills-nieuw"
-                                aria-selected="true">Nieuw
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-bestaand-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-bestaand" type="button" role="tab" aria-controls="pills-bestaand"
-                                aria-selected="false">Bestaand
-                        </button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <!-- NIEUW -->
-                    <div class="tab-pane fade show active" id="pills-nieuw" role="tabpanel"
-                         aria-labelledby="pills-nieuw-tab">
-                        <form>
-                            <legend>Create New Movie</legend>
-                            <div class="row">
-                                <div class="col-md-12 col-lg-10 order-md-1">
-                                    <div class="row">
-                                        <div class="col-lg-6 mb-3 form-group">
-                                            <label for="nieuw-title" class="form-label">Movie Title</label>
-                                            <input type="text" class="form-control" id="nieuw-title"
-                                                   placeholder="Movie Title"/>
-                                        </div>
-                                        <div class="col-lg-6 mb-3 form-group">
-                                            <label for="nieuw-runtime" class="form-label">Runtime</label>
-                                            <input type="number" step="10" min="0" class="form-control"
-                                                   id="nieuw-runtime" placeholder="150"/>
-                                        </div>
-                                        <div class="col-lg-6 mb-3 form-group">
-                                            <label for="nieuw-releasedate" class="form-label">Release Date</label>
-                                            <input type="date" class="form-control" id="nieuw-releasedate"/>
-                                        </div>
-                                        <div class="col-lg-6 mb-3 form-group">
-                                            <label for="nieuw-type" class="form-label">Type</label>
-                                            <select type="date" class="form-control" id="nieuw-type">
-                                                <option>MOVIE</option>
-                                                <option>SERIE</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="nieuw-plot" class="form-label">Plot</label>
-                                            <textarea class="form-control" id="nieuw-plot" rows="3"></textarea>
-                                        </div>
-                                        <label for="nieuw-poster" class="form-label">Your vanity URL</label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="nieuw-poster-url">https://</span>
-                                            <input type="text" class="form-control" id="nieuw-poster"
-                                                   aria-describedby="nieuw-poster-url">
-                                        </div>
-                                        <div class="col-lg-2 mb-3 form-group">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                   id="nieuw-commingsoon" checked>
-                                            <label class="form-check-label" for="nieuw-commingsoon">
-                                                Coming Soon
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button id="nieuwefilm" type="submit" class="btn btn-primary">Create</button>
-                        </form>
-                        <div id="feedback1"></div>
-                    </div>
-                    <!-- BESTAAND -->
-                    <div class="tab-pane fade" id="pills-bestaand" role="tabpanel" aria-labelledby="pills-bestaand-tab">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-2 order-md-0 order-lg-1">
-                                    <img width="100%" height="auto" id="poster-bestaand"
-                                         src="https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"/>
-                            </div>
-                            <div class="col-md-12 col-lg-10 order-md-1 order-lg-0">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-3 form-group">
-                                        <label for="bestaand-title" class="form-label">Movie Title</label>
-                                        <input type="text" class="form-control" id="bestaand-title"
-                                               placeholder="Movie Title" disabled/>
-                                    </div>
-                                    <div class="col-lg-6 mb-3 form-group">
-                                        <label for="bestaand-runtime" class="form-label">Runtime</label>
-                                        <input type="number" step="10" min="0" class="form-control" id="bestaand-runtime"
-                                               placeholder="150" disabled/>
-                                    </div>
-                                    <div class="col-lg-6 mb-3 form-group">
-                                        <label for="bestaand-releasedate" class="form-label">Release Date</label>
-                                        <input type="date" class="form-control" id="bestaand-releasedate" disabled/>
-                                    </div>
-                                    <div class="col-lg-6 mb-3 form-group">
-                                        <label for="bestaand-type" class="form-label">Type</label>
-                                        <select type="date" class="form-control" id="bestaand-type" disabled>
-                                            <option>MOVIE</option>
-                                            <option>SERIE</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="bestaand-plot" class="form-label">Plot</label>
-                                        <textarea class="form-control" id="bestaand-plot" rows="3" disabled></textarea>
-                                    </div>
-                                    <div class="col-lg-2 mb-3 form-group">
-                                        <input class="form-check-input" type="checkbox" value="" id="bestaand-commingsoon"
-                                               checked disabled>
-                                        <label class="form-check-label" for="bestaand-commingsoon">
-                                            Coming Soon
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-search" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <section class="onzichtbaar zoek">
-
-                    <div class="input-group">
-                        <input class="form-control" type="search" id="searchField" placeholder="Zoek op titel of type">
-                    </div>
-
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Titel</th>
-                            <th scope="col">Released</th>
-                            <th scope="col">Runtime</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Coming soon?</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody">
-
-
-                        </tbody>
-                    </table>
-
-                    <div id="feedback3"></div>
-
-            </section>
-            </div>
-            <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="pills-contact-tab">About</div>
+            <%= require('html-loader!./panes/home.html').default %>
+            <%= require('html-loader!./panes/detail.html').default %>
+            <%= require('html-loader!./panes/search.html').default %>
+            <%= require('html-loader!./panes/new.html').default %>
         </div>
     </main>
 
-    <footer class="pt-4 my-md-5 pt-md-5 border-top text-center text-white" style="background-color: #f1f1f1;">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
         <!-- Grid container -->
         <div class="container pt-4">
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg  m-1"
                         href="https://www.facebook.com/"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -219,7 +75,7 @@
 
                 <!-- Twitter -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg m-1"
                         href="https://twitter.com/"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -227,7 +83,7 @@
 
                 <!-- Google -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg m-1"
                         href="https://www.google.be/?hl=nl"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -235,7 +91,7 @@
 
                 <!-- Instagram -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg m-1"
                         href="https://instagram.com/"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -243,7 +99,7 @@
 
                 <!-- Linkedin -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg  m-1"
                         href="https://nl.linkedin.com/"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -251,7 +107,7 @@
                 </a>
                 <!-- Github -->
                 <a
-                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        class="btn btn-link btn-floating btn-lg m-1"
                         href="https://github.com/"
                         role="button"
                         data-mdb-ripple-color="dark"
@@ -263,7 +119,7 @@
 
         <!-- Copyright -->
         <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            Maxim Derboven - <a class="text-dark" href="mailto:maxim.derboven@gmail.com">maxim.derboven@student.kdg.be</a>
+            Maxim Derboven INF203 - <a href="mailto:maxim.derboven@student.kdg.be">maxim.derboven@student.kdg.be</a>
         </div>
         <!-- Copyright -->
     </footer>

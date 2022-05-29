@@ -1,0 +1,7 @@
+@mixin changecolor($color) {
+  background-color: $color;
+}
+
+@mixin invisible() {
+  visibility: hidden;
+}

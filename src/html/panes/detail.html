@@ -1,0 +1,61 @@
+<div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="row">
+        <div class="col-md-12 col-lg-2 order-md-0 order-lg-1">
+            <img width="100%" height="auto" id="poster-bestaand"
+                 src="https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"/>
+        </div>
+        <div class="col-md-12 col-lg-10 order-md-1 order-lg-0">
+            <label for="movie-option">SELECTEER JE MOVIE</label>
+            <select class="form-control" id="movie-option">
+            </select>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="col-md-12 col-lg-10 order-md-1 order-lg-0">
+            <div class="row">
+                <div class="col-lg-6 mb-3 form-group">
+                    <label for="bestaand-title" class="form-label">Movie Title</label>
+                    <input type="text" class="form-control" id="bestaand-title"
+                           placeholder="Movie Title"/>
+                </div>
+                <div class="col-lg-3 mb-3 form-group">
+                    <label for="bestaand-runtime" class="form-label">Runtime</label>
+                    <input type="number" step="10" min="0" class="form-control" id="bestaand-runtime"
+                           placeholder="150"/>
+                </div>
+                <div class="col-lg-3 mb-3 form-group">
+                    <label for="bestaand-id" class="form-label">ID</label>
+                    <input type="number" class="form-control" id="bestaand-id" readonly/>
+                </div>
+                <div class="col-lg-6 mb-3 form-group">
+                    <label for="bestaand-releasedate" class="form-label">Release Date</label>
+                    <input type="date" class="form-control" id="bestaand-releasedate"/>
+                </div>
+                <div class="col-lg-6 mb-3 form-group">
+                    <label for="bestaand-type" class="form-label">Type</label>
+                    <select type="date" class="form-control" id="bestaand-type">
+                        <option>MOVIE</option>
+                        <option>SERIE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bestaand-plot" class="form-label">Plot</label>
+                    <textarea class="form-control" id="bestaand-plot" rows="3"></textarea>
+                </div>
+                <div class="col-lg-2 mb-3 form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="bestaand-commingsoon"
+                           checked>
+                    <label class="form-check-label" for="bestaand-commingsoon">
+                        Coming Soon
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="new" type="button">New Movie</button>
+            <button class="btn btn-success" id="edit" type="button">Edit Movie</button>
+            <button class="btn btn-danger" id="delete" type="button">Delete Movie</button>
+            <div id="errorlog-detail"></div>
+        </div>
+    </div>
+</div>

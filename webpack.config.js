@@ -14,15 +14,22 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.(sass|css|scss)$/,
                 // use: ["style-loader", "css-loader"]}, // faster build in development
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
+                use: [
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ]
             },
-          //  assets referred from html
-          {
-                test: /\.html?$/i,
-                use: ['html-loader']
-            },
+            //  assets referred from html
+            // {
+            //     test: /\.html$/i,
+            //     loader: "html-loader",
+            // },
             // Image assets
             {
                 test: /\.(png|svg|jpe?g|gif)$/i,
